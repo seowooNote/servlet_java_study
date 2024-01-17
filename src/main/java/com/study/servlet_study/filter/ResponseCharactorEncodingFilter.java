@@ -17,6 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebFilter("/*")
 public class ResponseCharactorEncodingFilter extends HttpFilter implements Filter {
 
+	private static final long serialVersionUID = 1L;
+
+
 	public void destroy() {
 		
 	}
@@ -33,7 +36,7 @@ public class ResponseCharactorEncodingFilter extends HttpFilter implements Filte
 		
 		chain.doFilter(request, response); // 최종 filter 처리후 servlet 호출(doGet()으로 감 / @WebServlet)
 		
-		
+		System.out.println(response.getCharacterEncoding());
 		// 후처리 영역(chain.doFilter(request, response); 기준으로 아래쪽 영역, 제일 마지막에 실행됨)
 		// httpServletResponse.getWriter().println("무조건 후처리함");
 	}
