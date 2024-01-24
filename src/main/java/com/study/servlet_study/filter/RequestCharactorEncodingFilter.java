@@ -38,7 +38,7 @@ public class RequestCharactorEncodingFilter extends HttpFilter implements Filter
 		
 		String[] methods = new String[] {"POST", "PUT"};
 		
-		System.out.println(httpRequest.getMethod());
+		// System.out.println(httpRequest.getMethod());
 	
 		if(Arrays.asList(methods).contains(httpRequest.getMethod().toUpperCase())) {
 			httpRequest.setCharacterEncoding("UTF-8");
